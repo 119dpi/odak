@@ -2925,7 +2925,7 @@ function renderFilm() {
     const a = assets.get(id);
     if (!a) return;
     const b = document.createElement('button');
-    b.className = 'thumb' + (ui.selection.has(id) ? ' selected' : '') + (!p.boardIds.includes(id) ? ' off-board' : '') + (mobilePicking && p.boardIds.includes(id) ? ' mobile-included' : '');
+    b.className = 'thumb' + (!mobilePicking && ui.selection.has(id) ? ' selected' : '') + (!p.boardIds.includes(id) ? ' off-board' : '') + (mobilePicking && p.boardIds.includes(id) ? ' mobile-included' : '');
     b.dataset.id = id;
     b.title = S.photos[id].name + (p.boardIds.includes(id) ? '' : ' · 작업대 밖 / 두 번 눌러 다시 올리기');
     b.setAttribute('aria-label', b.title);
